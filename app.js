@@ -393,7 +393,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
   var wt; stage.addEventListener("wheel", function(e){
     if(!(e.ctrlKey || e.metaKey)) return; e.preventDefault(); room.classList.add("drag"); xv.classList.add("drag"); clearTimeout(wt); wt = setTimeout(function(){ room.classList.remove("drag"); xv.classList.remove("drag"); }, 160); zoom(Math.exp(-e.deltaY*0.01));
   }, {passive: false});
-  stage.addEventListener("pointerdown", function(e){ if(e.button !== 0 || e.target.closest("button")) return; pan = {x: e.clientX, y: e.clientY, px: px, py: py}; moved = false; });
+  stage.addEventListener("pointerdown", function(e){ if(e.button !== 0 || e.target.closest("button, .xnote-wall")) return; pan = {x: e.clientX, y: e.clientY, px: px, py: py}; moved = false; });
   window.addEventListener("pointermove", function(e){
     if(!pan) return; var dx = e.clientX - pan.x, dy = e.clientY - pan.y;
     if(!moved && Math.hypot(dx, dy) > 4){ moved = true; xv.classList.add("drag"); stage.classList.add("grabbing"); unlit(); var h = $("xhint"); if(h) h.classList.add("gone"); }

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Али Эркинов · Photo & Design</title><link rel="icon" href="assets/camera.svg" type="image/svg+xml"><meta name="theme-color" content="#fbfaf7"><meta name="description" content="Али Эркинов. Репортажный и портретный фотограф. Москва и Санкт-Петербург. Концерты, спорт, портреты и истории из личного канала.">
 <link rel="preload" href="assets/fonts/lastik.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/helvetica-neue.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/bodoni-72-os-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css?v=1aeeed95bea5">
+<link rel="stylesheet" href="guestbook.css">
 </head>
 <body>
 <nav class="toc" id="toc" aria-label="Sections">
@@ -45,14 +46,17 @@
 </section>
 <section class="exh" id="exhibition" aria-label="The Exhibition">
   <header class="xh"><h2 class="rh">The Exhibition</h2><p class="sub">То, что меня олицетворяет.<br>Образы, движение и вдохновение.</p></header>
+  <div class="exhibition-actions"><div class="exhibition-switch"><button id="art-mode" type="button" aria-pressed="true">Вдохновение</button><button id="notes-mode" type="button" aria-pressed="false">Стена предложений</button></div><button class="note-open" id="note-open" type="button">+ Оставить стикер</button></div>
   <div class="xs" id="xs" tabindex="0" aria-label="Gallery room. Drag to look around a wall. Use the left and right arrow keys to turn to the other walls.">
-    <div class="xv" id="xv"><div class="xroom" id="xroom"><div class="xw left" id="xw0"></div><div class="xw back" id="xw1"></div><div class="xw right" id="xw2"></div><div class="xf"></div><div class="xc"></div></div></div>
+    <div class="xv" id="xv"><div class="xroom" id="xroom"><div class="xw left" id="xw0"></div><div class="xw back" id="xw1"><div class="xnote-wall" id="visitor-wall" role="region" aria-label="Предложения посетителей"></div></div><div class="xw right" id="xw2"></div><div class="xf"></div><div class="xc"></div></div></div>
     <button class="xb l" id="xl" type="button" aria-label="Look at the left wall">&lsaquo;</button><button class="xb r" id="xr" type="button" aria-label="Look at the right wall">&rsaquo;</button>
     <p class="hint xhint" id="xhint" aria-hidden="true">drag to look around the wall</p>
     <div class="xd" id="xd" role="group" aria-label="Choose a wall"></div>
     <div class="zoomc"><button type="button" id="xzo" aria-label="Zoom out">&minus;</button><button type="button" id="xzi" aria-label="Zoom in">+</button><button type="button" id="xzf">fit</button></div>
   </div>
+<div class="notes-pagination"><button id="notes-prev" type="button" aria-label="Предыдущие стикеры">←</button><span id="notes-page"></span><button id="notes-next" type="button" aria-label="Следующие стикеры">→</button><button id="notes-refresh" type="button">Обновить стену</button></div><p class="wall-status" id="wall-status" role="status"></p>
 </section>
+<div class="note-dialog" id="note-dialog" role="dialog" aria-modal="true" aria-labelledby="note-title" hidden><form id="note-form" class="note-form" data-color="butter"><button class="note-close" id="note-close" type="button" aria-label="Закрыть форму">×</button><h3 id="note-title">Что предложишь?</h3><label for="note-text">Твоя идея для проекта, съёмки или сайта</label><textarea id="note-text" rows="4" minlength="3" maxlength="240" required placeholder="Например, сделать серию портретов на улицах Петербурга…"></textarea><span class="note-count" id="note-count">0 / 240</span><label for="note-name">Как тебя подписать? <span>(необязательно)</span></label><input id="note-name" maxlength="32" autocomplete="nickname" placeholder="Имя или псевдоним"><div class="note-honey" aria-hidden="true"><label for="note-website">Сайт</label><input id="note-website" tabindex="-1" autocomplete="off"></div><fieldset class="note-colors"><legend>Цвет стикера</legend><button class="note-butter" type="button" data-note-color="butter" aria-label="Жёлтый" aria-pressed="true"></button><button class="note-pink" type="button" data-note-color="pink" aria-label="Розовый" aria-pressed="false"></button><button class="note-mint" type="button" data-note-color="mint" aria-label="Зелёный" aria-pressed="false"></button><button class="note-blue" type="button" data-note-color="blue" aria-label="Голубой" aria-pressed="false"></button></fieldset><button class="note-send" id="note-send" type="submit">Приклеить на стену ↗</button><p class="note-consent">Стикер увидят все посетители. Не оставляй здесь личные данные.</p><p class="note-status" id="note-status" role="status"></p></form></div>
 <section class="film" id="film" aria-label="The Film Roll">
   <header class="fh"><h2 class="rh">The Film Roll</h2><p class="sub">Digital photographs, an analog state of mind.</p><p class="hint fhint" id="fhint" aria-hidden="true">scratch a frame to develop it</p></header>
   <div id="fl"></div>
@@ -91,5 +95,6 @@
 </div>
 
 <script src="app.js?v=5f4d9779e3e4"></script>
+<script src="guestbook.js"></script>
 </body>
 </html>

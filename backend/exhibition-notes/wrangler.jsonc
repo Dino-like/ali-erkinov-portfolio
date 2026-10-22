@@ -1,0 +1,8 @@
+{
+  "name": "ali-erkinov-exhibition-notes",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": true,
+  "vars": {"ALLOWED_ORIGINS": "https://dino-like.github.io,https://jamshid-erkinov-creative.amusedapple17.chatgpt.site"},
+  "d1_databases": [{"binding":"DB","database_name":"ali-erkinov-exhibition-notes","database_id":"REPLACE_AFTER_DATABASE_CREATION","migrations_dir":"migrations"}]
+}
