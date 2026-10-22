@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Али Эркинов · Photo & Design</title><link rel="icon" href="assets/camera.svg" type="image/svg+xml"><meta name="theme-color" content="#fbfaf7"><meta name="description" content="Али Эркинов. Репортажный и портретный фотограф. Москва и Санкт-Петербург. Концерты, спорт, портреты и истории из личного канала.">
+<link rel="preload" href="assets/fonts/lastik.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/helvetica-neue.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/bodoni-72-os-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="toc" id="toc" aria-label="Sections">
+  <button class="toc-b" id="tocb" type="button" aria-expanded="false" aria-controls="tocp">Contents</button>
+  <div class="toc-p" id="tocp"></div>
+</nav>
+<a class="ig" id="ig" href="https://www.instagram.com/chebuzavrrrrr/" target="_blank" rel="noopener" aria-label="Instagram, @chebuzavrrrrr (opens in a new tab)"><i></i></a>
+<div class="ct" id="ct">
+  <button class="ct-b" id="ctb" type="button" aria-expanded="false" aria-controls="ctp">Contact</button>
+  <div class="ct-p" id="ctp"><p class="ct-t">Say hello</p><a class="ct-m" id="ctm" href="#"></a><div class="ct-r"><button type="button" id="ctc">copy</button><a id="ctw" href="#">write</a></div></div>
+</div>
+<main id="top">
+  <section class="bio" aria-label="Introduction">
+    <div class="col">
+      <h1>Али Эркинов<small>@chebuzavrrrrr</small></h1>
+      <p class="say" id="say" aria-hidden="true"></p>
+      <p class="sr">Я Али Эркинов, репортажный и портретный фотограф. Снимаю концерты, спорт и людей в Москве и Санкт-Петербурге. Люблю людей, фотографию и моменты, которые хочется сохранить.</p>
+    </div>
+    <figure class="polaroid" id="polaroid" tabindex="0" aria-describedby="about">
+      <img fetchpriority="high" decoding="async" src="assets/portrait-jamshid.webp" alt="Али Эркинов, polaroid portrait" width="511" height="842">
+      <span class="hint" id="hint2" aria-hidden="true">about me</span>
+      <figcaption class="about" id="about"><b>Обо мне</b><p>Я Али Эркинов, репортажный и портретный фотограф. Снимаю в Москве и Санкт-Петербурге: концерты, спорт, портреты и то, что происходит между ними.</p><p>Люблю фотографировать и знакомиться с людьми. Особенно когда после съёмки мы не просто расходимся, а продолжаем общаться.</p><p>В поездках собираю маленькие наблюдения: улицы, растения, случайный свет. А ещё работаю с дизайном и медиапроектами.</p><p>В <a href="https://t.me/Chebuzavrrrr" target="_blank" rel="noopener">моём канале</a> – съёмки, поездки и моменты, к которым хочется вернуться.</p></figcaption>
+    </figure>
+  </section>
+
+  <section class="zone" aria-label="Things in my vicinity">
+    <div class="desk" id="desk"></div>
+    <h2>Things in<br>My Vicinity</h2>
+    <button class="shuffle" id="shuffle" type="button">shuffle</button>
+    <p class="hint" id="hint1" aria-hidden="true">hover over the things</p>
+  </section>
+</main>
+<section class="repo" id="repository" aria-label="The Repository">
+  <header class="rhead"><h2 class="rh">The Repository</h2><p class="sub">Work I&rsquo;m proud of. Drag to wander, pick a role to zoom in.</p>
+    <div class="tabs" id="tabs" role="group" aria-label="Choose a section"></div><div class="tabs t2" id="tabs2" role="group" aria-label="Choose a professional role"></div></header>
+  <div class="stage" id="stage"><div class="world" id="world"></div>
+    <div class="zoomc"><button type="button" id="zo" aria-label="Zoom out">&minus;</button><button type="button" id="zi" aria-label="Zoom in">+</button><button type="button" id="zf">fit</button></div></div>
+</section>
+<section class="exh" id="exhibition" aria-label="The Exhibition">
+  <header class="xh"><h2 class="rh">The Exhibition</h2><p class="sub">То, что меня олицетворяет.<br>Образы, движение и вдохновение.</p></header>
+  <div class="xs" id="xs" tabindex="0" aria-label="Gallery room. Drag to look around a wall. Use the left and right arrow keys to turn to the other walls.">
+    <div class="xv" id="xv"><div class="xroom" id="xroom"><div class="xw left" id="xw0"></div><div class="xw back" id="xw1"></div><div class="xw right" id="xw2"></div><div class="xf"></div><div class="xc"></div></div></div>
+    <button class="xb l" id="xl" type="button" aria-label="Look at the left wall">&lsaquo;</button><button class="xb r" id="xr" type="button" aria-label="Look at the right wall">&rsaquo;</button>
+    <p class="hint xhint" id="xhint" aria-hidden="true">drag to look around the wall</p>
+    <div class="xd" id="xd" role="group" aria-label="Choose a wall"></div>
+    <div class="zoomc"><button type="button" id="xzo" aria-label="Zoom out">&minus;</button><button type="button" id="xzi" aria-label="Zoom in">+</button><button type="button" id="xzf">fit</button></div>
+  </div>
+</section>
+<section class="film" id="film" aria-label="The Film Roll">
+  <header class="fh"><h2 class="rh">The Film Roll</h2><p class="sub">Digital photographs, an analog state of mind.</p><p class="hint fhint" id="fhint" aria-hidden="true">scratch a frame to develop it</p></header>
+  <div id="fl"></div>
+</section>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Roll viewer" hidden>
+  <div class="lbx"><div class="lbc" id="lbc"></div>
+    <div class="lbr"><button type="button" id="lbp" aria-label="Previous frame">&lsaquo;</button><div class="lbf" id="lbf"></div><button type="button" id="lbn" aria-label="Next frame">&rsaquo;</button></div>
+    <div class="lbk" id="lbk"></div><button type="button" id="lbd">develop this frame</button><button type="button" id="lbx">close</button></div>
+</div>
+
+<section class="shelf" id="shelf" aria-label="The Consumption Shelf">
+  <header class="sh-h"><h2 class="rh">The Consumption Shelf</h2><p class="sub">Photo stories, projects and visual notes, collected on one shelf.</p><p class="hint shhint" id="shhint" aria-hidden="true">drag the shelf, pull an issue out</p></header>
+  <div class="shv" id="shv" tabindex="0" aria-label="Shelf of monthly issues. Scroll or drag sideways. Press Enter on an issue to open it."><div class="sht"><div class="shr" id="shr"></div><div class="shp"></div></div></div>
+</section>
+
+<section class="max" id="max" aria-label="ЛОВИ МОМЕНТ">
+  <h2 class="sr">ЛОВИ МОМЕНТ</h2>
+  <canvas class="mg" id="mg" aria-label="Стикер «ЛОВИ МОМЕНТ». Проведи по буквам, чтобы вырастить цветы."></canvas>
+  <p class="mgh" id="mgh" aria-hidden="true"></p>
+  <div class="mgc"><div class="mgp" id="mgp" role="group" aria-label="Colours"></div><button class="mgb" id="mgx" type="button">clear</button></div>
+  <p class="mgk">Taken from Type Garden by <a href="https://www.instagram.com/art.akshat/" target="_blank" rel="noopener">@art.akshat</a></p>
+</section>
+<div class="shov" id="shov" role="dialog" aria-modal="true" aria-label="Issue viewer" hidden>
+  <div class="fbs" id="fbs"><div class="fbw" id="fbw"></div></div>
+  <button class="shx" id="shx" type="button">close</button>
+  <div class="shc" id="shc"><button type="button" id="shp" aria-label="Previous pages">&lsaquo;</button><div class="shn" id="shn"></div><button type="button" id="shnx" aria-label="Next pages">&rsaquo;</button></div>
+</div>
+
+<div class="xdim" id="xdim"></div><div class="xbeam" id="xbeam"></div><div class="xcard" id="xcard"><b id="xct"></b><i id="xcm"></i><span id="xcd"></span></div>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Project details" hidden>
+  <div class="box"><div class="th" id="sTh"></div><h3 id="sT"></h3><p class="meta" id="sM"></p><p id="sD"></p><a id="sL" target="_blank" rel="noopener" hidden>watch &#8599;</a>
+    <div class="bh" id="sBh" hidden><span>Behind the scenes</span><span><button type="button" id="sP" aria-label="Previous photo">&lsaquo;</button><button type="button" id="sN" aria-label="Next photo">&rsaquo;</button></span></div>
+    <div class="strip" id="sS" tabindex="0" aria-label="Behind the scenes photos" hidden></div>
+    <button type="button" id="sX">close</button></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

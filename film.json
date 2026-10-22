@@ -1,0 +1,23 @@
+{
+  "rolls": [
+    {
+      "title": "Roll 01",
+      "stock": "WIDE FRAMES · 16:9",
+      "camera": "Из моего фотопортфолио",
+      "frames": [
+        {
+          "file": "assets/content/film-wfolio-01.webp",
+          "caption": "Aglaya"
+        },
+        {
+          "file": "assets/content/film-wfolio-02.webp",
+          "caption": "Лидер – это призвание"
+        },
+        {
+          "file": "assets/content/film-wfolio-03.webp",
+          "caption": "Портрет · из портфолио"
+        }
+      ]
+    }
+  ]
+}
