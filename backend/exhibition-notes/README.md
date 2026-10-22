@@ -1,6 +1,10 @@
 # Общая стена предложений
 
-Код подготовлен для Cloudflare Workers + D1. Публичное хранилище ещё не создано: необходим вход владельца в Cloudflare.
+Общая стена подключена к Cloudflare Workers + D1.
+
+API: https://ali-erkinov-exhibition-notes.ali-erkinov-portfolio.workers.dev/api/notes
+
+База: ali-erkinov-exhibition-notes, привязка DB.
 
 ## Подключение после входа
 
