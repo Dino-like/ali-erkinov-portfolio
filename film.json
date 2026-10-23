@@ -1,13 +1,13 @@
 {
   "rolls": [
     {
-      "title": "Roll 01",
-      "stock": "WIDE FRAMES · 16:9",
+      "title": "Плёнка 01",
+      "stock": "ШИРОКИЕ КАДРЫ · 16:9",
       "camera": "Из моего фотопортфолио",
       "frames": [
         {
           "file": "assets/content/film-wfolio-01.webp",
-          "caption": "Aglaya"
+          "caption": "Аглая"
         },
         {
           "file": "assets/content/film-wfolio-02.webp",

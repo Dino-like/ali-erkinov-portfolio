@@ -1,7 +1,7 @@
 
 // ---- Typing + strikethrough ----
-var lead = "I photograph people, music and everything in between. I",
-    words = ["shoot,", "travel,", "catch the light,", "design,", "meet people,", "save moments\u2026"],
+var lead = "Я снимаю людей, музыку и всё, что между ними. Я",
+    words = ["снимаю,", "путешествую,", "ловлю свет,", "создаю дизайн,", "знакомлюсь с людьми,", "сохраняю моменты…"],
     sayEl = document.getElementById("say"), pol = document.getElementById("polaroid"), timers = [];
 function later(fn, ms){ timers.push(setTimeout(fn, ms)); }
 function play(){
@@ -29,7 +29,7 @@ function play(){
   t += 120;
   var itEl = document.createElement("span"); itEl.className = "it";
   var plain = document.createElement("span"); fin.appendChild(plain); fin.appendChild(itEl);
-  typeInto(plain, "I love ", 32); typeInto(itEl, "people & photography.", 32);
+  typeInto(plain, "Я люблю ", 32); typeInto(itEl, "людей и фотографию.", 32);
   later(function(){ sayEl.classList.add("done"); }, t + 500);   // strikes soften once everything is said
   later(function(){ pol.classList.add("on"); }, 250);
 }
@@ -115,10 +115,10 @@ requestAnimationFrame(tick);
 
 // ---- Portfolio projects and curated photo selections ----
 // project: [title, zone, role label, client, year, line, still ratio, hue, link, [sticky notes], bts count]
-var P = [["Ольга Сычёва · «Красная нить»", "director", "Концертная фотография", "", "", "Фотосерия концерта Ольги Сычёвой «Красная нить». Сценический свет, выступление и люди в кадре. Полная серия опубликована в моём фотопортфолио.\n\nЗа кулисами концерта.\nВосемь лет я следил за её творчеством. А потом она написала и предложила поснимать концерт.\n\nЯ оказался рядом с людьми, которых раньше видел только на сцене или слушал в наушниках. На концерте был и Владимир Понкин. Мы шутили, общались и очень быстро нашли общий язык.\n\nМне нравится, когда после съёмки мы не просто расходимся, а продолжаем общаться. Люблю людей. Люблю фотографию. Люблю такие моменты.", "720/1280", 210, "https://chebuzavrrrrr.wfolio.pro/olga-sycheva-krasnaya-nit", ["сцена, свет и голос", "сохранить атмосферу вечера", "полная серия в портфолио"], ["assets/content/sycheva-00.webp", "assets/content/sycheva-01.webp", "assets/content/sycheva-02.webp", "assets/content/sycheva-03.webp", "assets/content/sycheva-04.webp", "assets/content/sycheva-05.webp", "assets/content/sycheva-06.webp", "assets/content/sycheva-07.webp", "assets/content/sycheva-added-01.webp", "assets/content/sycheva-added-02.webp", "assets/content/sycheva-added-03.webp", "assets/content/sycheva-added-04.webp", "assets/content/sycheva-added-05.webp", "assets/content/sycheva-added-06.webp", "assets/content/sycheva-added-07.webp", "assets/content/sycheva-added-08.webp", "assets/content/sycheva-added-09.webp", "assets/content/concert-story-00.webp", "assets/content/concert-story-01.webp", "assets/content/concert-story-02.webp", "assets/content/concert-story-03.webp", "assets/content/concert-story-04.webp", "assets/content/concert-story-05.webp", "assets/content/concert-story-06.webp", "assets/content/concert-story-07.webp", "assets/content/concert-story-08.webp", "assets/content/concert-story-09.webp"], "assets/video/sycheva-concert.mp4"], ["МАИ-МБА", "director", "Спортивный портрет", "", "", "Портретная фотосерия команды МАИ-МБА. Студийная съёмка игроков с баскетбольным мячом.", "720/1280", 210, "https://chebuzavrrrrr.wfolio.pro/fotosessiya-mai-mba", ["команда в кадре", "баскетбол и характер", "портретная серия"], ["assets/content/mba-00.webp", "assets/content/mba-01.webp", "assets/content/mba-02.webp", "assets/content/mba-03.webp", "assets/content/mba-04.webp", "assets/content/mba-05.webp"], "assets/video/mba-backstage.mp4"], ["X Летняя Универсиада · Сочи", "director", "Спортивная фотография", "", "", "Спортивная фотосерия с X Летней Универсиады в Сочи. Кадры с баскетбольной площадки и участники соревнований.", "1280/720", 210, "https://chebuzavrrrrr.wfolio.pro/h-letnyaya-universiada-g-sochi", ["спорт в движении", "событие изнутри", "Сочи"], ["assets/content/sochi-00.webp", "assets/content/sochi-01.webp", "assets/content/sochi-02.webp", "assets/content/sochi-03.webp", "assets/content/sochi-04.webp", "assets/content/sochi-05.webp"], "assets/video/sochi-basketball.mp4"], ["Daria", "director", "Портретная фотография", "", "", "Портретная серия Daria из моего фотопортфолио. Лицо, свет, настроение и детали.", "1280/720", 210, "https://chebuzavrrrrr.wfolio.pro/daria", ["портрет и настроение", "увидеть человека", "работа со светом"], ["assets/content/daria-00.webp", "assets/content/daria-01.webp", "assets/content/daria-02.webp", "assets/content/daria-03.webp", "assets/content/daria-04.webp", "assets/content/daria-05.webp"], "assets/video/daria-film.mp4"], ["Ольга Краснова · сольный концерт", "director", "Концертная фотография", "", "", "Фотосерия сольного концерта Ольги Красновой. Музыка, свет и живые моменты вечера.", "720/1280", 210, "https://chebuzavrrrrr.wfolio.pro/olga-krasnova-solnyy-kontsert", ["живая музыка", "люди и эмоции", "концертная история"], ["assets/content/krasnova-00.webp", "assets/content/krasnova-01.webp", "assets/content/krasnova-02.webp", "assets/content/krasnova-03.webp", "assets/content/krasnova-04.webp", "assets/content/krasnova-05.webp"], "assets/video/krasnova-concert.mp4"], ["Графика Волонтёрского центра", "strategist", "Визуальные материалы", "", "", "Графика Волонтёрского центра МАИ и макеты мерча из материалов моего портфолио.", "108/192", 210, "", ["визуальный язык инициатив", "графика и мерч"], ["assets/merch-shirt.webp", "assets/merch-detail.webp", "assets/good-vector.webp", "assets/volunteer-centre.webp"], "assets/volunteer-centre.webp"], ["Закулисье", "promos", "Фотография за кадром", "", "", "За кадром съёмки: свет, оборудование, люди и работа между дублями. Фотосерия «Закулисье» опубликована в моём фотопортфолио.", "506/380", 210, "https://chebuzavrrrrr.wfolio.pro/zakulisie", ["по другую сторону камеры", "люди, свет, процесс", "между дублями"], ["assets/content/backstage-01.webp", "assets/content/backstage-02.webp", "assets/content/backstage-03.webp", "assets/content/backstage-04.webp", "assets/content/backstage-05.webp"], "assets/content/backstage-00.webp"], ["58 YTS BackStage", "promos", "Репортажная фотография", "", "", "Фотосерия 58 YTS BackStage. Закулисные кадры и атмосфера съёмки.", "720/1280", 210, "https://chebuzavrrrrr.wfolio.pro/58-yts-backstage", ["внутри процесса", "моменты за кадром", "backstage"], ["assets/content/yts-00.webp", "assets/content/yts-01.webp", "assets/content/yts-02.webp", "assets/content/yts-03.webp", "assets/content/yts-04.webp", "assets/content/yts-05.webp"], "assets/video/backstage-shoot.mp4"], ["Добрый вектор", "social", "Организация · дизайн · фото", "", "", "Организовывал проект, разрабатывал визуальный стиль и занимался фотосъёмкой. Проект собрал более 250 участников.", "384/288", 210, "", ["250+ участников", "организация, дизайн и фотосъёмка"], ["assets/good-vector.webp", "assets/volunteer-centre.webp", "assets/merch-detail.webp", "assets/merch-shirt.webp"], "assets/good-vector.webp"], ["Волонтёрский центр МАИ", "social", "Графика и мерч", "", "", "Визуальные материалы Волонтёрского центра МАИ: графика, макет футболки и детали оформления.", "384/288", 210, "", ["идеи для носителей", "графика, которая объединяет"], ["assets/merch-shirt.webp", "assets/merch-detail.webp", "assets/volunteer-centre.webp", "assets/good-vector.webp"], "assets/merch-shirt.webp"], ["Китай · личный дневник", "personal", "Поездки и наблюдения", "", "июль 2026", "В июле я оказался в Китае. Из плюсов – я в Китае. Из минусов – забыл объектив.\n\nВ этом альбоме – фотографии и наблюдения из поездки: улицы, люди, вечерний свет и моменты между ними.", "1280/546", 210, "https://t.me/Chebuzavrrrr/1686", ["из плюсов – я в Китае", "из минусов – забыл объектив", "сохраняю эту поездку"], ["assets/content/china-1686.webp", "assets/content/china-01.webp", "assets/content/china-02.webp", "assets/content/china-03.webp", "assets/content/china-04.webp", "assets/content/china-05.webp", "assets/content/china-added-01.webp", "assets/content/china-added-02.webp", "assets/content/china-added-03.webp", "assets/content/china-added-04.webp", "assets/content/china-added-05.webp", "assets/content/china-added-06.webp", "assets/content/china-added-07.webp", "assets/content/china-added-08.webp", "assets/content/china-added-09.webp", "assets/content/china-added-10.webp", "assets/content/china-added-11.webp", "assets/content/china-added-12.webp", "assets/content/china-added-13.webp", "assets/content/china-added-14.webp", "assets/content/china-added-15.webp", "assets/content/china-added-16.webp", "assets/content/china-added-17.webp", "assets/content/china-added-18.webp"], "assets/video/china-diary.mp4"], ["Аптекарский огород", "personal", "Визуальный дневник", "", "июнь 2026", "Как же я люблю растения.\n\nПрогулка по Аптекарскому огороду: зелень, свет, небо и детали, на которые хочется смотреть подольше. Фотографии из личного канала.", "1280/544", 210, "https://t.me/Chebuzavrrrr/1493", ["как же я люблю растения", "Аптекарский огород", "просто замечать детали"], ["assets/content/garden-00.webp", "assets/content/garden-01.webp", "assets/content/garden-02.webp", "assets/content/garden-03.webp", "assets/content/garden-04.webp", "assets/content/garden-05.webp"], "assets/video/garden-therapy.mp4"], ["Aglaya", "personal", "Портретная фотография", "", "", "Портретная серия Aglaya. Чёрно-белые кадры и внимание к человеку.", "328/584", 210, "https://chebuzavrrrrr.wfolio.pro/aglaya", ["чёрно-белый портрет", "взгляд и характер", "портретная серия"], ["assets/content/aglaya-01.webp", "assets/content/aglaya-02.webp", "assets/content/aglaya-03.webp", "assets/content/aglaya-04.webp", "assets/content/aglaya-05.webp"], "assets/content/aglaya-00.webp"], ["Vlada", "personal", "Портретная фотография", "", "", "Портретная фотосерия Vlada из моего фотопортфолио. Свет и пространство вокруг человека.", "328/584", 210, "https://chebuzavrrrrr.wfolio.pro/vlada", ["свет и пространство", "человек в кадре", "портретная история"], ["assets/content/vlada-01.webp", "assets/content/vlada-02.webp", "assets/content/vlada-03.webp", "assets/content/vlada-04.webp", "assets/content/vlada-05.webp"], "assets/content/vlada-00.webp"], ["Martselo", "personal", "Портретная фотография", "", "", "Серия Martselo. Цвет, свет и портретное настроение. Полная подборка – в моём фотопортфолио.", "328/584", 210, "https://chebuzavrrrrr.wfolio.pro/martsello", ["портрет и цвет", "экспериментировать со светом", "замечать настроение"], ["assets/content/martselo-01.webp", "assets/content/martselo-02.webp", "assets/content/martselo-03.webp", "assets/content/martselo-04.webp", "assets/content/martselo-05.webp"], "assets/content/martselo-00.webp"], ["StandUp Still", "personal", "Репортажная фотография", "", "", "Фотосерия StandUp Still: выступления и участники вечера. Полная серия опубликована в моём фотопортфолио.", "506/380", 210, "https://chebuzavrrrrr.wfolio.pro/standap-still", ["вечер в кадрах", "истории и люди", "репортажная серия"], ["assets/content/standup-01.webp", "assets/content/standup-02.webp", "assets/content/standup-03.webp", "assets/content/standup-04.webp", "assets/content/standup-05.webp"], "assets/content/standup-00.webp"]];
+var P = [["Ольга Сычёва · «Красная нить»", "director", "Концертная фотография", "", "", "Фотосерия концерта Ольги Сычёвой «Красная нить». Сценический свет, выступление и люди в кадре. Полная серия опубликована в моём фотопортфолио.\n\nЗа кулисами концерта.\nВосемь лет я следил за её творчеством. А потом она написала и предложила поснимать концерт.\n\nЯ оказался рядом с людьми, которых раньше видел только на сцене или слушал в наушниках. На концерте был и Владимир Понкин. Мы шутили, общались и очень быстро нашли общий язык.\n\nМне нравится, когда после съёмки мы не просто расходимся, а продолжаем общаться. Люблю людей. Люблю фотографию. Люблю такие моменты.", "720/1280", 210, "https://chebuzavrrrrr.wfolio.pro/olga-sycheva-krasnaya-nit", ["сцена, свет и голос", "сохранить атмосферу вечера", "полная серия в портфолио"], ["assets/content/sycheva-00.webp", "assets/content/sycheva-01.webp", "assets/content/sycheva-02.webp", "assets/content/sycheva-03.webp", "assets/content/sycheva-04.webp", "assets/content/sycheva-05.webp", "assets/content/sycheva-06.webp", "assets/content/sycheva-07.webp", "assets/content/sycheva-added-01.webp", "assets/content/sycheva-added-02.webp", "assets/content/sycheva-added-03.webp", "assets/content/sycheva-added-04.webp", "assets/content/sycheva-added-05.webp", "assets/content/sycheva-added-06.webp", "assets/content/sycheva-added-07.webp", "assets/content/sycheva-added-08.webp", "assets/content/sycheva-added-09.webp", "assets/content/concert-story-00.webp", "assets/content/concert-story-01.webp", "assets/content/concert-story-02.webp", "assets/content/concert-story-03.webp", "assets/content/concert-story-04.webp", "assets/content/concert-story-05.webp", "assets/content/concert-story-06.webp", "assets/content/concert-story-07.webp", "assets/content/concert-story-08.webp", "assets/content/concert-story-09.webp"], "assets/video/sycheva-concert.mp4"], ["МАИ-МБА", "director", "Спортивный портрет", "", "", "Портретная фотосерия команды МАИ-МБА. Студийная съёмка игроков с баскетбольным мячом.", "720/1280", 210, "https://chebuzavrrrrr.wfolio.pro/fotosessiya-mai-mba", ["команда в кадре", "баскетбол и характер", "портретная серия"], ["assets/content/mba-00.webp", "assets/content/mba-01.webp", "assets/content/mba-02.webp", "assets/content/mba-03.webp", "assets/content/mba-04.webp", "assets/content/mba-05.webp"], "assets/video/mba-backstage.mp4"], ["10-я летняя Универсиада · Сочи", "director", "Спортивная фотография", "", "", "Спортивная фотосерия с 10-й летней Универсиады в Сочи. Кадры с баскетбольной площадки и участники соревнований.", "1280/720", 210, "https://chebuzavrrrrr.wfolio.pro/h-letnyaya-universiada-g-sochi", ["спорт в движении", "событие изнутри", "Сочи"], ["assets/content/sochi-00.webp", "assets/content/sochi-01.webp", "assets/content/sochi-02.webp", "assets/content/sochi-03.webp", "assets/content/sochi-04.webp", "assets/content/sochi-05.webp"], "assets/video/sochi-basketball.mp4"], ["Дарья", "director", "Портретная фотография", "", "", "Портретная серия Дарья из моего фотопортфолио. Лицо, свет, настроение и детали.", "1280/720", 210, "https://chebuzavrrrrr.wfolio.pro/daria", ["портрет и настроение", "увидеть человека", "работа со светом"], ["assets/content/daria-00.webp", "assets/content/daria-01.webp", "assets/content/daria-02.webp", "assets/content/daria-03.webp", "assets/content/daria-04.webp", "assets/content/daria-05.webp"], "assets/video/daria-film.mp4"], ["Ольга Краснова · сольный концерт", "director", "Концертная фотография", "", "", "Фотосерия сольного концерта Ольги Красновой. Музыка, свет и живые моменты вечера.", "720/1280", 210, "https://chebuzavrrrrr.wfolio.pro/olga-krasnova-solnyy-kontsert", ["живая музыка", "люди и эмоции", "концертная история"], ["assets/content/krasnova-00.webp", "assets/content/krasnova-01.webp", "assets/content/krasnova-02.webp", "assets/content/krasnova-03.webp", "assets/content/krasnova-04.webp", "assets/content/krasnova-05.webp"], "assets/video/krasnova-concert.mp4"], ["Графика Волонтёрского центра", "strategist", "Визуальные материалы", "", "", "Графика Волонтёрского центра МАИ и макеты мерча из материалов моего портфолио.", "108/192", 210, "", ["визуальный язык инициатив", "графика и мерч"], ["assets/merch-shirt.webp", "assets/merch-detail.webp", "assets/good-vector.webp", "assets/volunteer-centre.webp"], "assets/volunteer-centre.webp"], ["Закулисье", "promos", "Фотография за кадром", "", "", "За кадром съёмки: свет, оборудование, люди и работа между дублями. Фотосерия «Закулисье» опубликована в моём фотопортфолио.", "506/380", 210, "https://chebuzavrrrrr.wfolio.pro/zakulisie", ["по другую сторону камеры", "люди, свет, процесс", "между дублями"], ["assets/content/backstage-01.webp", "assets/content/backstage-02.webp", "assets/content/backstage-03.webp", "assets/content/backstage-04.webp", "assets/content/backstage-05.webp"], "assets/content/backstage-00.webp"], ["58-й слёт юных туристов · за кадром", "promos", "Репортажная фотография", "", "", "Фотосерия 58-й слёт юных туристов · за кадром. Закулисные кадры и атмосфера съёмки.", "720/1280", 210, "https://chebuzavrrrrr.wfolio.pro/58-yts-backstage", ["внутри процесса", "моменты за кадром", "за кадром"], ["assets/content/yts-00.webp", "assets/content/yts-01.webp", "assets/content/yts-02.webp", "assets/content/yts-03.webp", "assets/content/yts-04.webp", "assets/content/yts-05.webp"], "assets/video/backstage-shoot.mp4"], ["Добрый вектор", "social", "Организация · дизайн · фото", "", "", "Организовывал проект, разрабатывал визуальный стиль и занимался фотосъёмкой. Проект собрал более 250 участников.", "384/288", 210, "", ["250+ участников", "организация, дизайн и фотосъёмка"], ["assets/good-vector.webp", "assets/volunteer-centre.webp", "assets/merch-detail.webp", "assets/merch-shirt.webp"], "assets/good-vector.webp"], ["Волонтёрский центр МАИ", "social", "Графика и мерч", "", "", "Визуальные материалы Волонтёрского центра МАИ: графика, макет футболки и детали оформления.", "384/288", 210, "", ["идеи для носителей", "графика, которая объединяет"], ["assets/merch-shirt.webp", "assets/merch-detail.webp", "assets/volunteer-centre.webp", "assets/good-vector.webp"], "assets/merch-shirt.webp"], ["Китай · личный дневник", "personal", "Поездки и наблюдения", "", "июль 2026", "В июле я оказался в Китае. Из плюсов – я в Китае. Из минусов – забыл объектив.\n\nВ этом альбоме – фотографии и наблюдения из поездки: улицы, люди, вечерний свет и моменты между ними.", "1280/546", 210, "https://t.me/Chebuzavrrrr/1686", ["из плюсов – я в Китае", "из минусов – забыл объектив", "сохраняю эту поездку"], ["assets/content/china-1686.webp", "assets/content/china-01.webp", "assets/content/china-02.webp", "assets/content/china-03.webp", "assets/content/china-04.webp", "assets/content/china-05.webp", "assets/content/china-added-01.webp", "assets/content/china-added-02.webp", "assets/content/china-added-03.webp", "assets/content/china-added-04.webp", "assets/content/china-added-05.webp", "assets/content/china-added-06.webp", "assets/content/china-added-07.webp", "assets/content/china-added-08.webp", "assets/content/china-added-09.webp", "assets/content/china-added-10.webp", "assets/content/china-added-11.webp", "assets/content/china-added-12.webp", "assets/content/china-added-13.webp", "assets/content/china-added-14.webp", "assets/content/china-added-15.webp", "assets/content/china-added-16.webp", "assets/content/china-added-17.webp", "assets/content/china-added-18.webp"], "assets/video/china-diary.mp4"], ["Аптекарский огород", "personal", "Визуальный дневник", "", "июнь 2026", "Как же я люблю растения.\n\nПрогулка по Аптекарскому огороду: зелень, свет, небо и детали, на которые хочется смотреть подольше. Фотографии из личного канала.", "1280/544", 210, "https://t.me/Chebuzavrrrr/1493", ["как же я люблю растения", "Аптекарский огород", "просто замечать детали"], ["assets/content/garden-00.webp", "assets/content/garden-01.webp", "assets/content/garden-02.webp", "assets/content/garden-03.webp", "assets/content/garden-04.webp", "assets/content/garden-05.webp"], "assets/video/garden-therapy.mp4"], ["Аглая", "personal", "Портретная фотография", "", "", "Портретная серия Аглая. Чёрно-белые кадры и внимание к человеку.", "328/584", 210, "https://chebuzavrrrrr.wfolio.pro/aglaya", ["чёрно-белый портрет", "взгляд и характер", "портретная серия"], ["assets/content/aglaya-01.webp", "assets/content/aglaya-02.webp", "assets/content/aglaya-03.webp", "assets/content/aglaya-04.webp", "assets/content/aglaya-05.webp"], "assets/content/aglaya-00.webp"], ["Влада", "personal", "Портретная фотография", "", "", "Портретная фотосерия Влада из моего фотопортфолио. Свет и пространство вокруг человека.", "328/584", 210, "https://chebuzavrrrrr.wfolio.pro/vlada", ["свет и пространство", "человек в кадре", "портретная история"], ["assets/content/vlada-01.webp", "assets/content/vlada-02.webp", "assets/content/vlada-03.webp", "assets/content/vlada-04.webp", "assets/content/vlada-05.webp"], "assets/content/vlada-00.webp"], ["Марсело", "personal", "Портретная фотография", "", "", "Серия Марсело. Цвет, свет и портретное настроение. Полная подборка – в моём фотопортфолио.", "328/584", 210, "https://chebuzavrrrrr.wfolio.pro/martsello", ["портрет и цвет", "экспериментировать со светом", "замечать настроение"], ["assets/content/martselo-01.webp", "assets/content/martselo-02.webp", "assets/content/martselo-03.webp", "assets/content/martselo-04.webp", "assets/content/martselo-05.webp"], "assets/content/martselo-00.webp"], ["Стендап в кадре", "personal", "Репортажная фотография", "", "", "Фотосерия Стендап в кадре: выступления и участники вечера. Полная серия опубликована в моём фотопортфолио.", "506/380", 210, "https://chebuzavrrrrr.wfolio.pro/standap-still", ["вечер в кадрах", "истории и люди", "репортажная серия"], ["assets/content/standup-01.webp", "assets/content/standup-02.webp", "assets/content/standup-03.webp", "assets/content/standup-04.webp", "assets/content/standup-05.webp"], "assets/content/standup-00.webp"]];
 var RECT = {all:[0,0,4000,2200], professional:[0,0,2000,2200], personal:[2000,0,2000,2180], director:[0,100,2000,720], strategist:[0,820,1700,1380], social:[1000,820,1000,640], promos:[0,1500,1700,700]};
-var ZLAB = {director:"as a Photographer", strategist:"as a Designer", social:"as an Organiser"};
-var T1 = [["all","All"],["professional","Professional"],["personal","Personal"]], T2 = [["director","Photographer"],["strategist","Designer"],["social","Organiser"]];
+var ZLAB = {director:"Фотограф", strategist:"Дизайнер", social:"Организатор"};
+var T1 = [["all","Всё"],["professional","Рабочее"],["personal","Личное"]], T2 = [["director","Фотография"],["strategist","Дизайн"],["social","Организация"]];
 var BT = [[-10,-20,3,120],[120,10,-4,118],[236,-40,5,100],[250,30,6,96]], NT = [[-14,22,-5],[232,130,4],[-16,170,-3]], TINTS = ["#fff3a8","#ffd6dd","#d6ecd2","#d3e6f7"];
 var stage = document.getElementById("stage"), world = document.getElementById("world"), tabs = document.getElementById("tabs"), tabs2 = document.getElementById("tabs2"), sheet = document.getElementById("sheet");
 var view = {x:0, y:0, s:1}, current = "all", lastPin = null, moved = false, start = null;
@@ -134,9 +134,9 @@ function openSheet(p, idx, opener){
   document.getElementById("sM").textContent = [p[2], p[3], p[4]].filter(Boolean).join(" · ");
   var D = document.getElementById("sD"); D.textContent = p[5]; D.hidden = !p[5];
   var L = document.getElementById("sL");
-  if(p[8]){ L.href = p[8]; L.textContent = /t\.me/.test(p[8]) ? "read in Telegram ↗" : /youtu/.test(p[8]) ? "watch on YouTube ↗" : "open full series ↗"; L.hidden = false; } else { L.hidden = true; }
+  if(p[8]){ L.href = p[8]; L.textContent = /t\.me/.test(p[8]) ? "читать в Телеграме ↗" : /youtu/.test(p[8]) ? "смотреть на Ютубе ↗" : "смотреть всю серию ↗"; L.hidden = false; } else { L.hidden = true; }
   var S = document.getElementById("sS"), pics = Array.isArray(p[10]) ? p[10] : [];
-  S.textContent = ""; pics.forEach(function(src){ var im = el("img"); im.src = src; im.alt = "Behind the scenes, " + p[0]; im.draggable = false; S.appendChild(im); });
+  S.textContent = ""; pics.forEach(function(src){ var im = el("img"); im.src = src; im.alt = "За кадром, " + p[0]; im.draggable = false; S.appendChild(im); });
   S.hidden = document.getElementById("sBh").hidden = !pics.length; S.scrollLeft = 0;
   sheet.hidden = false;
   if(idx > 0 && S.children[idx]) S.scrollLeft = S.children[idx].offsetLeft - S.offsetLeft;
@@ -159,9 +159,9 @@ function cluster(p, ox, oy, n, K){
   }
   var sx = X + 165, sy = Y + 44, card = put(mainCard(p), X + 60, Y + 44, rot, par), mb = 44 + card.offsetHeight;   // mb: bottom edge of the main card
   for(i = 0; i < nb; i++){
-    var b = el("button", "bts"), by = i < 3 ? mb + BT[i][1] : BT[i][1]; b.type = "button"; b.style.width = BT[i][3] + "px"; b.setAttribute("aria-label", "Behind the scenes photo " + (i + 1) + ", " + p[0]);
+    var b = el("button", "bts"), by = i < 3 ? mb + BT[i][1] : BT[i][1]; b.type = "button"; b.style.width = BT[i][3] + "px"; b.setAttribute("aria-label", "Фото со съёмок " + (i + 1) + ", " + p[0]);
     if(imgs){ var ph = el("img"); ph.src = imgs[i]; ph.alt = ""; ph.loading = "lazy"; ph.decoding = "async"; ph.draggable = false; b.appendChild(ph); }
-    else b.appendChild(thumb("4/3", (p[7] + 40*(i+1)) % 360, "BTS"));
+    else b.appendChild(thumb("4/3", (p[7] + 40*(i+1)) % 360, "За кадром"));
     (function(i, b){ b.onclick = function(){ if(!moved) openSheet(p, i, b); }; })(i, b);
     put(b, X + BT[i][0], Y + by, BT[i][2], par);
     var ex = X + BT[i][0] + BT[i][3]/2, ey = Y + by, cx = (sx + ex)/2, cy = (sy + ey)/2 + Math.hypot(ex - sx, ey - sy)*0.18;
@@ -176,8 +176,8 @@ if(!MOBILE){
 var ZORG = {director:[0,100], strategist:[0,820], social:[1040,820], promos:[0,1506]}, cnt = {}, pi = 0;
 Object.keys(ZLAB).forEach(function(k){ zlabel(ZLAB[k], k, ZORG[k][0] + 40, ZORG[k][1] + 28); });
 function sub(txt, k, x, y){ var b = el("button", "sh", txt); b.type = "button"; b.onclick = function(){ if(!moved) go(k); }; return put(b, x, y, 0); }
-zlabel("Backstage & Production", "promos", 40, 1514).classList.add("sm");
-sub("Professional", "professional", 1000, 8); sub("Personal", "personal", 3000, 8);
+zlabel("За кадром и на площадке", "promos", 40, 1514).classList.add("sm");
+sub("Рабочее", "professional", 1000, 8); sub("Личное", "personal", 3000, 8);
 P.forEach(function(p, n){
   var k = p[1], c = cnt[k] = (cnt[k] || 0) + 1, i = c - 1, ox, oy;
   if(k === "personal"){ ox = 2050 + (i % 3)*660; oy = i < 3 ? 170 : 1180; }
@@ -199,7 +199,7 @@ divs.innerHTML = wob(30, 812, 1980, 812) + wob(1020, 840, 1020, 1470) + wob(2000
 world.appendChild(divs);
 var note = el("div", "sticky note", "Люблю людей. Люблю фотографию. Люблю такие моменты.\n\nМне нравится, когда после съёмки мы не просто расходимся, а продолжаем общаться. Когда приходишь работать, а в итоге получаешь столько эмоций, что ещё несколько дней ходишь с дурацкой улыбкой.");
 note.style.setProperty("--tint", "#fff3a8"); note.style.width = "1100px"; note.style.fontSize = "1.5rem"; note.style.whiteSpace = "pre-line"; note.style.padding = "24px 28px"; put(note, 2060, 900, -1);
-var more = el("a", "zl", "More Projects"); more.href = "https://chebuzavrrrrr.wfolio.pro/"; more.target = "_blank"; more.rel = "noopener";
+var more = el("a", "zl", "Другие проекты"); more.href = "https://chebuzavrrrrr.wfolio.pro/"; more.target = "_blank"; more.rel = "noopener";
 more.onclick = function(e){ if(moved) e.preventDefault(); }; more.style.translate = "-50% -50%"; more.style.fontSize = "2.6rem"; put(more, 3560, 900 + note.offsetHeight/2, 0);
 }
 var BOARD_PHOTOS = [["Вместе после концерта", "assets/content/board-snapshot-01.webp", "1280/866", [100, 625, -4]], ["За столом", "assets/content/board-snapshot-02.webp", "1280/853", [3260, 1080, -3]], ["Рабочее место", "assets/content/board-snapshot-03.webp", "1280/853", [3485, 1080, 3]], ["Портрет", "assets/content/board-snapshot-04.webp", "1280/853", [3710, 1080, -3]], ["Собака на прогулке", "assets/content/board-snapshot-05.webp", "1280/853", 3020, 1100, -3]];
@@ -221,7 +221,7 @@ function mfilter(k, quiet){
 function buildMobile(){
   var sec = document.getElementById("repository"); sec.classList.add("mob");
   var list = el("div", "mbl"); sec.appendChild(list);
-  [["director","as a Photographer"],["strategist","as a Designer"],["promos","Backstage & Production"],["social","as an Organiser"],["personal","Personal"]].forEach(function(g){
+  [["director","Фотограф"],["strategist","Дизайнер"],["promos","За кадром и на площадке"],["social","Организатор"],["personal","Личное"]].forEach(function(g){
     var box = el("section", "mbg"); list.appendChild(box); box.appendChild(el("h3", "mbt", g[1])); mobileGroups[g[0]] = box;
     P.forEach(function(p, n){
       if(p[1] !== g[0]) return;
@@ -235,7 +235,7 @@ function buildMobile(){
   });
   var pb = mobileGroups.personal;
   pb.appendChild(el("div", "mbn", "Люблю людей. Люблю фотографию. Люблю такие моменты.\n\nМне нравится, когда после съёмки мы не просто расходимся, а продолжаем общаться. Когда приходишь работать, а в итоге получаешь столько эмоций, что ещё несколько дней ходишь с дурацкой улыбкой."));
-  var more = el("a", "mbm", "More Projects"); more.href = "https://chebuzavrrrrr.wfolio.pro/"; more.target = "_blank"; more.rel = "noopener"; pb.appendChild(more);
+  var more = el("a", "mbm", "Другие проекты"); more.href = "https://chebuzavrrrrr.wfolio.pro/"; more.target = "_blank"; more.rel = "noopener"; pb.appendChild(more);
 }
 if(MOBILE) buildMobile();
 function apply(){ world.style.transform = "translate(" + view.x.toFixed(1) + "px," + view.y.toFixed(1) + "px) scale(" + view.s.toFixed(4) + ")"; }
@@ -258,7 +258,7 @@ function go(k, quiet){
   if(!quiet) document.getElementById("repository").scrollIntoView({behavior: "smooth", block: "start"});
 }
 function mk(g, list){ list.forEach(function(c){ var b = el("button", "tab", c[1]); b.type = "button"; b.dataset.k = c[0]; b.onclick = function(){ go(c[0]); }; g.appendChild(b); }); }
-mk(tabs, MOBILE ? [["all","All"],["director","Photographer"],["strategist","Designer"],["social","Organiser"],["personal","Personal"]] : T1); mk(tabs2, MOBILE ? [] : T2);
+mk(tabs, MOBILE ? [["all","Всё"],["director","Фотография"],["strategist","Дизайн"],["social","Организация"],["personal","Личное"]] : T1); mk(tabs2, MOBILE ? [] : T2);
 // wander: drag to pan, +/- or pinch (ctrl/cmd + wheel) to zoom; plain scrolling still moves the page
 stage.addEventListener("pointerdown", function(e){ if(e.button !== 0 || e.target.closest(".zoomc")) return; start = {x:e.clientX, y:e.clientY, vx:view.x, vy:view.y}; moved = false; });
 window.addEventListener("pointermove", function(e){
@@ -348,12 +348,12 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
       var items = list.filter(function(a){ return a.wall === name; }), rects = pack(items.map(function(a){ return {ar: a.w/a.h}; })), wall = $("xw" + w);
       items.forEach(function(it, i){
         var rc = rects[i], a = document.createElement("div"), info = {t: it.title || "", m: [it.year, it.medium].filter(Boolean).join(" · "), n: it.note || ""};
-        a.className = "xa"; a.tabIndex = 0; a.dataset.w = w; a.setAttribute("aria-label", info.t || "Artwork");
+        a.className = "xa"; a.tabIndex = 0; a.dataset.w = w; a.setAttribute("aria-label", info.t || "Работа");
         a.style.cssText = "left:" + rc.x.toFixed(1) + "px;top:" + rc.y.toFixed(1) + "px;width:" + rc.w.toFixed(1) + "px;height:" + rc.h.toFixed(1) + "px;--d:" + (8 + (k*1.3) % 5).toFixed(1) + "s;--dl:" + (-k*1.7).toFixed(1) + "s"; k++;
         a.innerHTML = '<div class="xi"><div class="xim"><img alt="" loading="lazy" decoding="async" draggable="false"></div></div>';
         var pim = a.querySelector("img");
-        if(it.video){ var video = document.createElement("video"); video.muted = true; video.loop = true; video.autoplay = true; video.playsInline = true; video.setAttribute("muted", ""); video.setAttribute("playsinline", ""); video.preload = "none"; video.poster = it.file; video.dataset.src = it.video; video.setAttribute("aria-label", info.t || "Video"); pim.replaceWith(video); }
-        else { pim.dataset.src = it.file; pim.alt = info.t || "Artwork"; }
+        if(it.video){ var video = document.createElement("video"); video.muted = true; video.loop = true; video.autoplay = true; video.playsInline = true; video.setAttribute("muted", ""); video.setAttribute("playsinline", ""); video.preload = "none"; video.poster = it.file; video.dataset.src = it.video; video.setAttribute("aria-label", info.t || "Видео"); pim.replaceWith(video); }
+        else { pim.dataset.src = it.file; pim.alt = info.t || "Работа"; }
         a.addEventListener("pointerenter", function(e){ if(!pan) lit(a, info, e); });
         a.addEventListener("pointermove", function(e){ if(!pan) place(e.clientX, e.clientY); });
         a.addEventListener("pointerleave", function(){ if(!pan) unlit(); });
@@ -383,7 +383,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
     Array.prototype.forEach.call($("xd").children, function(b, k){ b.setAttribute("aria-current", k === idx ? "true" : "false"); });
   }
   function zoom(f){ zf = Math.max(0.65, Math.min(2.6, zf*f)); unlit(); ap(); }
-  ["left wall", "centre wall", "right wall"].forEach(function(t, k){ var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Show the " + t); b.onclick = function(){ show(k); }; $("xd").appendChild(b); });
+  ["левую стену", "центральную стену", "правую стену"].forEach(function(t, k){ var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Показать " + t); b.onclick = function(){ show(k); }; $("xd").appendChild(b); });
   $("xl").onclick = function(){ show(idx - 1); }; $("xr").onclick = function(){ show(idx + 1); };
   $("xzi").onclick = function(){ zoom(1.25); }; $("xzo").onclick = function(){ zoom(0.8); }; $("xzf").onclick = function(){ zf = 1; px = py = 0; ap(); };
   stage.addEventListener("keydown", function(e){
@@ -465,20 +465,20 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
   function build(d){
     (d.rolls || []).forEach(function(r, ri){
       var frames = (r.frames || []).map(mkFrame), box = el("section", "roll"), t = el("div", "rt"); rolls.push(frames);
-      t.innerHTML = "<b></b><span></span>"; t.firstChild.textContent = r.title || ("Roll " + (ri + 1)); t.lastChild.textContent = [r.stock, r.camera, r.year].filter(Boolean).join("  ·  ");
-      var db = el("button", "dall"); db.type = "button"; db.textContent = "develop all"; db.setAttribute("aria-label", "Develop every frame of " + (r.title || "this roll"));
+      t.innerHTML = "<b></b><span></span>"; t.firstChild.textContent = r.title || ("Плёнка " + (ri + 1)); t.lastChild.textContent = [r.stock, r.camera, r.year].filter(Boolean).join("  ·  ");
+      var db = el("button", "dall"); db.type = "button"; db.textContent = "проявить всё"; db.setAttribute("aria-label", "Проявить все кадры: " + (r.title || "эта плёнка"));
       db.onclick = function(){ frames.forEach(function(F, i){ setTimeout(function(){ develop(F); }, i*110); }); };   // one after another
       t.appendChild(db); dalls.push({b: db, f: frames}); box.appendChild(t);
       var k = 0, s = 0;
       while(k < frames.length){
         var strip = el("div", "fs"), et = el("div", "et"), slots = PER, lead = (s === 0);
         strip.style.setProperty("--rot", ((s % 2 ? 1 : -1)*(0.25 + ((ri*3 + s*7) % 6)/10)).toFixed(2) + "deg"); strip.style.marginLeft = ((s*37 + ri*11) % 28 - 14) + "px";
-        et.textContent = Array(14).join((r.stock || "KODAK PORTRA 160").toUpperCase() + "      "); strip.appendChild(et);
+        et.textContent = Array(14).join((r.stock || "ПЛЁНКА · 160").toUpperCase() + "      "); strip.appendChild(et);
         if(lead){ strip.appendChild(el("div", "fr ld")); slots--; }
         for(var i = 0; i < slots; i++){
           if(k < frames.length){
-            (function(idx){ var v = view(frames[idx]); v.el.tabIndex = 0; v.el.setAttribute("role", "button"); v.el.setAttribute("aria-label", "Open frame " + (idx + 1) + " of " + (r.title || "this roll"));
-              var n = el("span", "fn"); n.textContent = "→ " + (idx + 1) + "A"; v.el.appendChild(n); n.style.cssText = "position:absolute;top:calc(100% + 4px)"; v.el.style.overflow = "visible";
+            (function(idx){ var v = view(frames[idx]); v.el.tabIndex = 0; v.el.setAttribute("role", "button"); v.el.setAttribute("aria-label", "Открыть кадр " + (idx + 1) + " из " + (r.title || "эта плёнка"));
+              var n = el("span", "fn"); n.textContent = "→ " + (idx + 1) + "А"; v.el.appendChild(n); n.style.cssText = "position:absolute;top:calc(100% + 4px)"; v.el.style.overflow = "visible";
               wire(v, function(){ open(ri, idx, v.el); }); strip.appendChild(v.el); })(k); k++;
           } else { strip.appendChild(el("div", "fr em")); }
         }
@@ -543,7 +543,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
 // ---- Contents tab: lists every section that exists on the page, jumps there, and marks where you are ----
 (function(){
   // add a section here (id on its <section>) and it appears in the menu automatically
-  var LIST = [["top", "The Intro"], ["repository", "The Repository"], ["exhibition", "The Exhibition"], ["film", "The Film Roll"], ["shelf", "The Consumption Shelf"], ["max", "ЛОВИ МОМЕНТ"]];
+  var LIST = [["top", "Знакомство"], ["repository", "Мои проекты"], ["exhibition", "Выставка"], ["film", "Фотоплёнка"], ["shelf", "Книжная полка"], ["max", "ЛОВИ МОМЕНТ"]];
   var box = document.getElementById("toc"), btn = document.getElementById("tocb"), panel = document.getElementById("tocp"), items = [];
   LIST.forEach(function(s){
     var el = document.getElementById(s[0]); if(!el || el.hidden) return;
@@ -587,9 +587,9 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
   function page(it, idx, w){
     if(idx === "blank"){ var bl = el("div", "pg"); bl.style.background = "#f4efe6"; return bl; }
     var src = idx === 0 ? (it.cover || "") : idx === "back" ? (it.back || "") : (typeof idx === "number" && it.pages && it.pages[idx - 1]) || "", p = el("div", "pg");
-    if(src){ var im = el("img"); p.style.background = it.color || "#f4efe6"; im.style.opacity = "0"; im.style.transition = "opacity .35s"; im.onload = function(){ im.style.opacity = "1"; }; im.decoding = "async"; im.alt = idx === 0 ? it.month + " " + it.year + " cover" : idx === "back" ? "Back cover" : "Page " + idx; im.draggable = false; im.src = src; p.appendChild(im); if(im.complete && im.naturalWidth) im.style.opacity = "1"; return p; }
+    if(src){ var im = el("img"); p.style.background = it.color || "#f4efe6"; im.style.opacity = "0"; im.style.transition = "opacity .35s"; im.onload = function(){ im.style.opacity = "1"; }; im.decoding = "async"; im.alt = idx === 0 ? it.month + " " + it.year + " обложка" : idx === "back" ? "Задняя обложка" : "Страница " + idx; im.draggable = false; im.src = src; p.appendChild(im); if(im.complete && im.naturalWidth) im.style.opacity = "1"; return p; }
     p.className = "pg ph"; p.style.background = it.color || "#cdbfa8"; p.style.color = ink(it.color); p.style.fontSize = (w*0.12) + "px";
-    p.innerHTML = "<small></small><b></b><i>placeholder</i>"; p.firstChild.textContent = it.month + " " + it.year + (idx ? "" : " · " + it.title); p.children[1].textContent = idx === 0 ? it.title : idx === "back" ? "Back cover" : "Slide " + idx;
+    p.innerHTML = "<small></small><b></b><i>страница</i>"; p.firstChild.textContent = it.month + " " + it.year + (idx ? "" : " · " + it.title); p.children[1].textContent = idx === 0 ? it.title : idx === "back" ? "Задняя обложка" : "Страница " + idx;
     return p;
   }
   function count(it){ return (it.pages && it.pages.length) || it.n || 8; }
@@ -598,7 +598,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
     var b = el("div", "bk"), sp = el("div", "sp"), cv = el("div", "cv"), D = Math.round(H*0.8), fam = ["'Lastik',Georgia,serif", "'Bodoni 72 OS',Georgia,serif", "'Helvetica Neue',Arial,sans-serif"][i % 3];
     b.style.width = W + "px"; b.style.height = H + "px"; if(!it.spine){ sp.style.background = it.color || "#cdbfa8"; sp.style.color = ink(it.color); }
     if(it.spine){ sp.style.background = "url(\"" + it.spine + "\") center/100% 100% no-repeat"; }
-    else { sp.innerHTML = "<span class='sy'></span><span class='st'></span><span class='sb'>erkinov</span>"; sp.children[0].textContent = it.month + " " + it.year; sp.children[1].textContent = it.title; sp.children[1].style.fontFamily = fam; if(i % 3 === 1) sp.children[1].style.fontStyle = "italic"; }
+    else { sp.innerHTML = "<span class='sy'></span><span class='st'></span><span class='sb'>эркинов</span>"; sp.children[0].textContent = it.month + " " + it.year; sp.children[1].textContent = it.title; sp.children[1].style.fontFamily = fam; if(i % 3 === 1) sp.children[1].style.fontStyle = "italic"; }
     cv.style.width = D + "px"; cv.appendChild(page(it.coverSm ? Object.assign({}, it, {cover: it.coverSm}) : it, 0, D)); b.appendChild(sp); b.appendChild(cv); return b;
   }
   function build(d){
@@ -609,7 +609,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
   function draw(){
     issues.forEach(function(it, i){
       var H = 330 + ((i*53) % 90), W = it.spine && it.sw ? Math.round(H*it.sw/it.sh) : 54 + ((i*37) % 30), b = book(it, i, W, H);
-      b.setAttribute("role", "button"); b.tabIndex = 0; b.setAttribute("aria-label", "Open " + it.month + " " + it.year + ", " + it.title);
+      b.setAttribute("role", "button"); b.tabIndex = 0; b.setAttribute("aria-label", "Открыть " + it.month + " " + it.year + ", " + it.title);
       b.addEventListener("click", function(){ if(!moved) open(i, b); });
       b.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); open(i, b); } });
       function prefetch(){ if(it._pf) return; it._pf = 1; [it.cover, it.back].concat(it.pages || []).forEach(function(u){ if(u){ var i = new Image(); i.decoding = "async"; i.src = u; } }); }
@@ -655,12 +655,12 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
     fbw.style.transition = "none"; settle(); fbw.offsetWidth; fbw.style.transition = ""; fbs.classList.add("on");
     if(fx) fx.style.opacity = "0"; busy = false;
   }
-  function endPage(){ var p = el("div", "pg ph"); p.style.background = cur.color || "#cdbfa8"; p.style.color = ink(cur.color); p.style.fontSize = (pw*0.12) + "px"; p.innerHTML = "<small>erkinov</small><b>the end</b>"; return p; }
+  function endPage(){ var p = el("div", "pg ph"); p.style.background = cur.color || "#cdbfa8"; p.style.color = ink(cur.color); p.style.fontSize = (pw*0.12) + "px"; p.innerHTML = "<small>эркинов</small><b>конец</b>"; return p; }
   function settle(){   // stacking order + where the book sits (cover alone is centred, back cover alone is centred)
     leaves.forEach(function(lf, i){ lf.style.zIndex = i < k ? i : L - i; });
     fbw.style.transform = "translateX(" + (k === 0 ? -pw/2 : k === L ? pw/2 : 0) + "px)";
     var a = Math.min(2*k - 1, P - 1), z = Math.min(2*k, P - 1);
-    $("shn").textContent = cur.title + " · " + (k === 0 ? "cover" : k === L ? "the end" : "pages " + a + (z > a ? "–" + z : "") + " of " + (P - 1));
+    $("shn").textContent = cur.title + " · " + (k === 0 ? "обложка" : k === L ? "конец" : "страницы " + a + (z > a ? "–" + z : "") + " из " + (P - 1));
     $("shp").disabled = k === 0; $("shnx").disabled = k === L;
   }
   function next(){ if(k >= L) return; var lf = leaves[k]; lf.style.zIndex = 99; lf.classList.add("fl"); k++; setTimeout(function(){ settle(); }, 300); }
@@ -688,7 +688,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
 (function(){
   var EMAIL = "https://t.me/Chebuzavrrrrr";
   var box = document.getElementById("ct"), btn = document.getElementById("ctb"), m = document.getElementById("ctm"), w = document.getElementById("ctw"), c = document.getElementById("ctc");
-  m.textContent = "@Chebuzavrrrrr"; m.href = EMAIL; w.href = EMAIL; w.textContent = "write";
+  m.textContent = "@Chebuzavrrrrr"; m.href = EMAIL; w.href = EMAIL; w.textContent = "написать";
   function open(){ box.classList.add("on"); btn.setAttribute("aria-expanded", "true"); }
   function close(){ box.classList.remove("on"); btn.setAttribute("aria-expanded", "false"); }
   var canHover = window.matchMedia("(hover: hover)").matches, tm = 0;
@@ -699,8 +699,8 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
   document.addEventListener("click", function(e){ if(!box.contains(e.target)) close(); });
   document.addEventListener("keydown", function(e){ if(e.key === "Escape" && box.classList.contains("on")){ close(); btn.focus(); } });
   c.addEventListener("click", function(){
-    var done = function(){ c.textContent = "copied"; setTimeout(function(){ c.textContent = "copy"; }, 1600); };
-    if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(EMAIL).then(done, function(){ c.textContent = "try again"; }); else done();
+    var done = function(){ c.textContent = "скопировано"; setTimeout(function(){ c.textContent = "скопировать"; }, 1600); };
+    if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(EMAIL).then(done, function(){ c.textContent = "попробуй ещё раз"; }); else done();
   });
 })();
 // ---- Max the Moment: Type Garden's roses, stems and leaves grow out of the sticker's letters as the pointer moves over them ----
@@ -945,7 +945,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
       el.addEventListener("pointerup", function(e){ if(e.pointerType && e.pointerType !== "mouse") G.mx = null; });
       el.addEventListener("pointercancel", function(){ G.mx = null; });
       document.getElementById("mgx").addEventListener("click", function(){ G.letters.forEach(function(l){ l.els = null; l.endEls = null; l.tend = null; l.birth = null; l.lean = null; }); G.flies = []; G.perch = []; hint.classList.remove("gone"); });
-      hint.textContent = touchy ? "touch the sticker · tap for a butterfly" : "move over the sticker · click for a butterfly";
+      hint.textContent = touchy ? "коснись стикера · нажми, чтобы появилась бабочка" : "проведи по стикеру · нажми, чтобы появилась бабочка";
       var sticker = new Image(); sticker.onload = function(){
         var c = document.createElement("canvas"); c.width = IW; c.height = IH; var x = c.getContext("2d"); x.drawImage(sticker, 0, 0, IW, IH);
         var d = x.getImageData(0, 0, IW, IH), px = d.data;
