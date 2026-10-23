@@ -10,12 +10,13 @@
 @font-face{font-family:'Helvetica Neue';src:url(assets/fonts/helvetica-neue.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Helvetica Neue';src:url(assets/fonts/helvetica-neue-500.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
 :root{
-  --bg:#fbfaf7; --ink:#1b1b1b; --soft:#6d6a64; --red:#d9261c; --paper:#fff;
+  --bg:#000000; --ink:#f1efe9; --soft:#9b978e; --red:#ff4a3d; --paper:#f6f4ee;
+  color-scheme:dark;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--ink:#f1efe9;--soft:#9b978e;--red:#ff4a3d;--paper:#f6f4ee}}
-:root[data-theme="dark"]{--bg:#141413;--ink:#f1efe9;--soft:#9b978e;--red:#ff4a3d;--paper:#f6f4ee}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000000;--ink:#f1efe9;--soft:#9b978e;--red:#ff4a3d;--paper:#f6f4ee}}
+:root[data-theme="dark"]{--bg:#000000;--ink:#f1efe9;--soft:#9b978e;--red:#ff4a3d;--paper:#f6f4ee}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cyrillic Text","Lastik",Georgia,serif}

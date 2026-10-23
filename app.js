@@ -720,7 +720,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
   var el = document.getElementById("mg"), sec = document.getElementById("max"), hint = document.getElementById("mgh"), pal = document.getElementById("mgp");
   var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches, touchy = window.matchMedia("(hover: none)").matches;
   var G = {
-    letters: [], uid: 1, cache: {}, pi: 1, flies: [], perch: [], fa: {}, mx: null, my: null, W: 0, H: 0, S: 100, running: false, boot: performance.now(),
+    letters: [], uid: 1, cache: {}, pi: 0, flies: [], perch: [], fa: {}, mx: null, my: null, W: 0, H: 0, S: 100, running: false, boot: performance.now(),
     // ---------- math ----------
     h(n){ var x = Math.sin(n)*43758.5453; return x - Math.floor(x); },
     spr(t, k, w){ k = k || 7; w = w || 16; if(t <= 0) return 0; return 1 - Math.exp(-t*k)*Math.cos(t*w); },
