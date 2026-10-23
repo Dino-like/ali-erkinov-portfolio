@@ -296,8 +296,20 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
     for(var i = 0; i < 7; i++){ var f = document.createElement("div"); f.className = "xlt"; f.style.left = (130 + i*173) + "px"; f.innerHTML = "<i></i><b></b>"; rail.appendChild(f); lamps[w].push({el: f, x: 130 + i*173}); }
     $("xw" + w).appendChild(rail);
   });
-  var loaded = {}, nearEx = false;
-  function loadWall(w){ if(loaded[w] || w < 0 || w > 2) return; var ims = $("xw" + w).querySelectorAll("img[data-src], video[data-src]"); if(!ims.length) return; loaded[w] = 1; Array.prototype.forEach.call(ims, function(im){ im.src = im.dataset.src; if(im.tagName === "VIDEO"){ var play = im.play(); if(play && play.catch) play.catch(function(){}); } }); }   // only counts as done once the paintings exist
+  var loaded = {}, nearEx = false, galleryVisible = false;
+  function syncGalleryMotion(){
+    var active = galleryVisible && !document.hidden && !$("exhibition").classList.contains("show-notes");
+    room.classList.toggle("motion-active", active);
+    room.querySelectorAll("video").forEach(function(v){
+      if(active && v.getAttribute("src")){ var playing = v.play(); if(playing && playing.catch) playing.catch(function(){}); }
+      else v.pause();
+    });
+  }
+  if("IntersectionObserver" in window) new IntersectionObserver(function(entries){ galleryVisible = entries[0].isIntersecting; syncGalleryMotion(); }, {threshold:0.08}).observe(stage);
+  else galleryVisible = true;
+  document.addEventListener("visibilitychange",syncGalleryMotion);
+  new MutationObserver(syncGalleryMotion).observe($("exhibition"),{attributes:true,attributeFilter:["class"]});
+  function loadWall(w){ if(loaded[w] || w < 0 || w > 2) return; var ims = $("xw" + w).querySelectorAll("img[data-src], video[data-src]"); if(!ims.length) return; loaded[w] = 1; Array.prototype.forEach.call(ims, function(im){ im.src = im.dataset.src; if(im.tagName === "VIDEO") syncGalleryMotion(); }); }   // only counts as done once the paintings exist
   if("IntersectionObserver" in window) new IntersectionObserver(function(es){ if(es[0].isIntersecting && !nearEx){ nearEx = true; loadWall(idx); setTimeout(function(){ loadWall(0); loadWall(1); loadWall(2); }, 3000); } }, {rootMargin: "1400px 0px"}).observe(stage); else { nearEx = true; loadWall(0); loadWall(1); loadWall(2); }
   function place(x, y){ card.style.left = Math.min(x + 18, window.innerWidth - 250) + "px"; card.style.top = Math.min(y + 18, window.innerHeight - 120) + "px"; }
   function lit(a, info, e){   // the nearest track light switches on and throws a soft warm beam onto the piece; the room dims gently
@@ -348,7 +360,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
       var items = list.filter(function(a){ return a.wall === name; }), rects = pack(items.map(function(a){ return {ar: a.w/a.h}; })), wall = $("xw" + w);
       items.forEach(function(it, i){
         var rc = rects[i], a = document.createElement("div"), info = {t: it.title || "", m: [it.year, it.medium].filter(Boolean).join(" · "), n: it.note || ""};
-        a.className = "xa"; a.tabIndex = 0; a.dataset.w = w; a.setAttribute("aria-label", info.t || "Работа");
+        a.className = "xa" + (!it.video && !/pin-(08|16)\.webp/.test(it.file) ? " photo-motion" : ""); a.tabIndex = 0; a.dataset.w = w; a.setAttribute("aria-label", info.t || "Работа");
         a.style.cssText = "left:" + rc.x.toFixed(1) + "px;top:" + rc.y.toFixed(1) + "px;width:" + rc.w.toFixed(1) + "px;height:" + rc.h.toFixed(1) + "px;--d:" + (8 + (k*1.3) % 5).toFixed(1) + "s;--dl:" + (-k*1.7).toFixed(1) + "s"; k++;
         a.innerHTML = '<div class="xi"><div class="xim"><img alt="" loading="lazy" decoding="async" draggable="false"></div></div>';
         var pim = a.querySelector("img");
@@ -364,7 +376,7 @@ document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !shee
   }
   function start(list){   // pieces without a width/height get it from the image itself
     var wait = list.filter(function(a){ return !(a.w && a.h); }).map(function(a){ return new Promise(function(res){ var im = new Image(); im.onload = function(){ a.w = im.naturalWidth; a.h = im.naturalHeight; res(); }; im.onerror = function(){ a.w = 4; a.h = 3; res(); }; im.src = a.file; }); });
-    Promise.all(wait).then(function(){ build(list); if(nearEx) loadWall(idx); });
+    Promise.all(wait).then(function(){ build(list); if(nearEx) loadWall(idx); syncGalleryMotion(); });
   }
   if(window.XART) start(window.XART); else fetch("art.json", {cache: "no-cache"}).then(function(r){ return r.json(); }).then(start).catch(function(){ start([]); });
   window.addEventListener("scroll", function(){ if(!pan) unlit(); }, {passive: true});

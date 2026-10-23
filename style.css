@@ -371,3 +371,13 @@ html,body{overflow-x:clip}
 
 /* Display lettering is limited to Cyrillic glyphs. */
 h1,h2,h3,.pin b,.mbt,#sT,#xct,.bob b{font-family:"Cyrillic Heading","Lastik",Georgia,serif}
+
+/* Gentle movement within photographic frames, without shifting the gallery layout. */
+.xim{overflow:hidden}
+.photo-motion .xim img{animation:gallery-photo-drift calc(var(--d,9s) * 2) ease-in-out var(--dl,0s) infinite alternate;animation-play-state:paused;transform:scale(1.04);will-change:transform}
+.xa:nth-of-type(even).photo-motion .xim img{animation-direction:alternate-reverse}
+.xroom.motion-active .photo-motion .xim img{animation-play-state:running}
+.xa{animation-play-state:paused}
+.xroom.motion-active .xa{animation-play-state:running}
+@keyframes gallery-photo-drift{from{transform:scale(1.04) translate(-1%,.6%)}to{transform:scale(1.14) translate(1%,-.6%)}}
+@media(prefers-reduced-motion:reduce){.photo-motion .xim img{animation:none;transform:none;will-change:auto}}
